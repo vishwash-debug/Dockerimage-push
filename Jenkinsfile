@@ -21,7 +21,7 @@ stages {
     }
   }
 
-  stage('IMAGE_CHECK') { "
+  stage('IMAGE_CHECK') { 
     steps {
      sh " trivy image --severity CRITICAL --exit-code 0 $IMAGE_NAME:$IMAGE_TAG "
     } 
@@ -34,7 +34,7 @@ stages {
     }
   }
 
-  stage('DEPLOY') { "
+  stage('DEPLOY') { 
     steps {
       sh " docker stop $CONTAINER_NAME || true "
       sh " docker rm $CONTAINER_NAME || true "
