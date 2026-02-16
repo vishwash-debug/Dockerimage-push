@@ -5,7 +5,7 @@ FROM python:3.11-slim
 WORKDIR /net
 
 # INSTALL FLASK
-RUN  pip insatll flask
+RUN pip install flask
 
 #COPY sample.py
     
