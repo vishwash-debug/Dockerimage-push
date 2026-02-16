@@ -10,7 +10,7 @@ RUN  pip insatll flask
 #COPY sample.py
     
 #EXPOSE conatiner port
-EXPOSE 8090
+EXPOSE 5000
 
 # Run the app
 CMD ["python", "sample.py"]
