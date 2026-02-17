@@ -2,9 +2,9 @@ pipeline {
     agent {label "${LABEL_NAME}" }
     
     options {
-  timestamps
-  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '1', numToKeepStr: '2')
-}
+     timestamps
+     buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '1', numToKeepStr: '2')
+    }
 
     environment {
         IMAGE_NAME = "myimg"
