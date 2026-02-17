@@ -25,5 +25,15 @@ pipeline {
                 sh 'docker run -d --name $CONTAINER_NAME $IMAGE_NAME:$IMAGE_TAG'
             }
         }
+        post {
+            success {
+                archiveArtifacts artifacts: '*.tar', followSymlinks: false
+                
+            }
+            failure {
+                echo "deployment is failed, Please check logs"
+            }
+            
+        }
     }
 }
