@@ -1,11 +1,17 @@
 pipeline {
-    agent any
+    agent {label "${LABEL_NAME}" }
+    
+    options {
+  timestamps
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '1', numToKeepStr: '2')
+}
 
     environment {
         IMAGE_NAME = "myimg"
         IMAGE_TAG = "${BUILD_NUMBER}"
         CONTAINER_NAME = "webapp"
     }
+    
 
     stages {
         stage('CODE') {
