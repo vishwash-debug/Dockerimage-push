@@ -41,13 +41,14 @@ pipeline {
                 '''
             }
         }
-
-   post {
-    success {
-        echo 'Deployment Successful 🚀'
     }
-    failure {
-        echo 'Deployment Failed ❌ — check logs'
+
+    post {
+        success {
+            echo 'Deployment Successful 🚀'
+        }
+        failure {
+            echo 'Deployment Failed ❌ — check logs'
+        }
     }
 }
-
